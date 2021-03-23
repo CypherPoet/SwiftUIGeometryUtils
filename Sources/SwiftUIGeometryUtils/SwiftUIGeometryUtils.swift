@@ -1,3 +1,3 @@
-struct MyLibrary {
+struct SwiftUIGeometryUtils {
     var text = "Hello, World!"
 }
