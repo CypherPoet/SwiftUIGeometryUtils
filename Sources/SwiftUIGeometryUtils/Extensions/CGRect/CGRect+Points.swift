@@ -27,7 +27,7 @@ extension CGRect {
 
 
 // MARK: - Dimension Utilities
-extension CGRect
+extension CGRect {
     
     /// The number of points spanned by the smallest dimension of the rectangle.
     ///
