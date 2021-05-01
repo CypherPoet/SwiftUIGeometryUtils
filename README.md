@@ -54,7 +54,7 @@ You can add `SwiftUIGeometryUtils` as a package dependency in your `Package.swif
 let package = Package(
     //...
     dependencies: [
-        .package(url: "https://github.com/CypherPoet/SwiftUIGeometryUtils", .exact("0.0.2")),
+        .package(url: "https://github.com/CypherPoet/SwiftUIGeometryUtils", .exact("0.0.3")),
     ],
     //...
 )
