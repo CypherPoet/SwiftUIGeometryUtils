@@ -54,20 +54,23 @@ You can add `SwiftUIGeometryUtils` as a package dependency in your `Package.swif
 let package = Package(
     //...
     dependencies: [
-      .package(url: "https://github.com/CypherPoet/SwiftUIGeometryUtils", .upToNextMinor(from: "0.1.0")),
+      .package(
+          url: "https://github.com/CypherPoet/SwiftUIGeometryUtils",
+          .upToNextMinor(from: "0.2.0")
+      ),
     ],
     //...
 )
 ```
 
-From there, refer to `SwiftUIGeometryUtils` as a "target dependency" in any of _your_ package's targets that need it.
+From there, refer to the `SwiftUIGeometryUtils` "product" delivered by the `CypherPoetSwiftUIGeometryUtils` "package" inside of any of your project's target dependencies:
 
 ```swift
 targets: [
     .target(
         name: "YourLibrary",
         dependencies: [
-          "SwiftUIGeometryUtils",
+            .product(name: "SwiftUIGeometryUtils", package: "CypherPoetSwiftUIGeometryUtils"),
         ],
         ...
     ),
@@ -98,7 +101,7 @@ Contributions to `SwiftUIGeometryUtils` are most welcome. Check out some of the 
 
 ### Requirements
 
-- Xcode 12.5+ (Recommended)
+- Xcode 13.0+ (Recommended)
 
 
 ### 📜 Generating Documentation
