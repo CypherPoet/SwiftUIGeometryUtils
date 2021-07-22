@@ -38,3 +38,56 @@ extension RectangleCorner {
         }
     }
 }
+
+extension RectangleCorner: CaseIterable {}
+
+
+// MARK: - `UIRectCorner` + Init with `RectangleCorners`
+
+#if os(iOS) || os(tvOS) || targetEnvironment(macCatalyst)
+
+extension UIRectCorner {
+    
+    public init(_ corners: [RectangleCorner]) {
+        self.init()
+        
+        for corner in corners {
+            switch corner {
+                case .topLeading:
+                    formUnion(.topLeft)
+                case .topTrailing:
+                    formUnion(.topRight)
+                case .bottomLeading:
+                    formUnion(.bottomLeft)
+                case .bottomTrailing:
+                    formUnion(.bottomRight)
+            }
+        }
+    }
+}
+
+
+extension Array where Element == RectangleCorner {
+    
+    public init(_ corners: UIRectCorner) {
+        self.init()
+        
+        if corners.contains(.topLeft) {
+            append(.topLeading)
+        }
+        
+        if corners.contains(.topRight) {
+            append(.topTrailing)
+        }
+        
+        if corners.contains(.bottomLeft) {
+            append(.bottomLeading)
+        }
+        
+        if corners.contains(.bottomRight) {
+            append(.bottomTrailing)
+        }
+    }
+}
+
+#endif
