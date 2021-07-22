@@ -42,13 +42,14 @@ Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https:/
 
 ### Swift Package Manager Projects
 
-You can add `SwiftUIGeometryUtils` as a package dependency in your `Package.swift` file:
+You can add `CypherPoetSwiftUIGeometryUtils` as a package dependency in your `Package.swift` file:
 
 ```swift
 let package = Package(
     //...
     dependencies: [
       .package(
+          name: "CypherPoetSwiftUIGeometryUtils",
           url: "https://github.com/CypherPoet/SwiftUIGeometryUtils",
           .upToNextMinor(from: "0.2.0")
       ),
